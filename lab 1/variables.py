@@ -24,3 +24,9 @@ x, y, z = "Orange", "Banana", "Cherry"
 #ex 6
 
 x = y = z = "Orange"
+
+#ex 7
+
+def myfunc():
+    global x
+    x = "fantastic"
