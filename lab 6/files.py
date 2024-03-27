@@ -1,7 +1,7 @@
 # ex 1
 import os
 
-root = r'C:\Users\Алихан\Desktop\labs'
+root = r'C:\Users\Бeknur\Desktop\labs'
 
 for path, dirs, files in os.walk(root):
     for name in files:
@@ -17,7 +17,7 @@ def check_path_access(path):
     print(f"Writable: {os.access(path, os.W_OK)}")
     print(f"Executable: {os.access(path, os.X_OK)}")
 
-path = r'C:\Users\Алихан\Desktop\labs'
+path = r'C:\Users\Бeknur\Desktop\labs'
 check_path_access(path)
 
 # ex 3
@@ -31,20 +31,20 @@ def check_path_exist(path):
         print(f"Directory name: {os.path.dirname(path)}")
     else:
         print("Path does not exist.")
-specified_path = r'C:\Users\Алихан\Desktop\labs'
+specified_path = r'C:\Users\Бекнур\Desktop\labs'
 check_path_exist(specified_path)
 
-# ex 4
-# import os
+ # ex 4
+import os
 
-# def count_lines(file_path):
-#      with open(file_path, 'r') as file:
-#             line_count = sum(1 for _ in file)
-#             return line_count
-#    
-# specified_path = r'C:\Users\Алихан\Desktop\labs'
-# line_count = count_lines(specified_path)
-# print(f"Number of lines : {line_count}")
+def count_lines(file_path):
+      with open(file_path, 'r') as file:
+            line_count = sum(1 for _ in file)
+            return line_count
+
+specified_path = r'C:\Users\Бекнур\Desktop\labs'
+line_count = count_lines(specified_path)
+print(f"Number of lines : {line_count}")
 
 # ex 5
 my_list = [1, 2, 3, 4]
@@ -78,7 +78,7 @@ def delete_file(path):
     else:
         print(f"Файл '{path}' не существует")
 
-file_to_delete = r"C:\Users\Алихан\Desktop\labs\deleted.txt" 
+file_to_delete = r"C:\Users\Бекнур\Desktop\labs\deleted.txt" 
 delete_file(file_to_delete)
 
         

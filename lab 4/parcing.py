@@ -4,7 +4,7 @@ date = {
     "imdata": [
         {
             "l1PhysIf": {
-                "attributes": {
+                "attributes": { 
                     "adminSt": "up",
                     "autoNeg": "on",
                     "brkoutMap": "none",

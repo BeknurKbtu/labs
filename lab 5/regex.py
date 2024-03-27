@@ -1,106 +1,93 @@
 # ex 1
 import re
-txt = input() 
-def test1(txt):
-    m = re.findall("ab*",txt)
-    print(m)
-
-test1(txt)
+txt = input()
+x = re.search(r"a + b*", txt)
+if x:
+    print(txt)
+else:
+    print("Do not match")
 
 # ex 2
 import re
-
-text=input()
-
-def test(text):
-    pat = "ab{2,3}"
-    m = re.findall(pat, text)
-    return m
-m=test(text)
-print(m)
+txt = input()
+x = re.search(r'a + b{2,3}', txt)
+if x:
+    print(txt)
+else:
+    print("Does not match")
 
 # ex 3
 import re
-
-text=input()
-
-def test(text):
-    pat= r'[a-z]+(?:_[a-z]+)+'
-    m=re.findall(pat,text)
-    return m
-m=test(text)
-print(m)
+txt = input()
+x = re.search(r'[a-z]+_a[a-z]+', txt)
+if x:
+    print(x.group())
+else:
+    print('Not found')
 
 #ex4
 import re
 
-text=input()
+txt = input("Enter a string: ")
+x = re.search(r"[A-Z][a-z]+", txt)
 
-def test(text):
-    pat=r'[A-Z][a-z]+'
-    m=re.findall(pat,text)
-    return m
-m=test(text)
-print(m)
+if x:
+    print(x.group())
+else:
+    print("Not found")
 
 #ex5
 import re
-txt=input()
-def stend(txt):
-    pattern=r"a.*b$"
-    m=re.findall(pattern,txt)
-    print(m)
-stend(txt)
+
+
+txt = input('Write your string: ')
+
+x = re.search(r'a[a-z]*b', txt)
+
+if x:
+    print(x.group())
+else:
+    print('Not found')
 
 #ex6
 import re
-txt=input()
-x=re.sub(" ", ":" , txt)
-y=re.sub(" ", ",", txt)
+
+txt = input("Enter ")
+
+x = re.sub(r"[ ,.]", "|", txt)
+
 print(x)
-print(y)
 
 #ex7
-import re
-def camel(txt):
-    def capitals(match):
-        return match.group(1).upper()
-    return re.sub(r"_([a-zA-Z])",capitals,txt)
-camls=camel(input())
-print(camls)
+txt = input("Enter word in snake case type: ")
+
+x = ''.join(word.title() for word in txt.split('_'))
+
+print(x)
 
 #ex8
 import re
 
-def split_at_uppercase(text):
-    words = re.findall('[A-Z][^A-Z]*', text)
-    return words
+txt = input()
 
+x = re.split(r'(?<=[a-z)(?=[A-Z])', txt)
 
-text = input()
-result = split_at_uppercase(text)
-print(result)
+print(x)
 
 #ex9
 import re
 
-def insert_spaces(text):
-    pattern = r'(?<!^)(?=[A-Z])'
-    result = re.sub(pattern, ' ', text)
-    return result
+txt = input()
 
-text = input()
-result = insert_spaces(text)
-print(result)
+x = re.sub(r"([A-Z])", r' \1 ', txt)
+
+print(x)
 
 #ex10
 import re
 
-def camel_to_snake_case(camel_case_string):
-    snake_case_string = re.sub(r'(?<!^)(?=[A-Z])', '_', camel_case_string).lower()
-    return snake_case_string
+name = input()
 
+x = re.sub('_','', name.title())
 
-camel_case_string =  input()
-snake_case_string = camel_to_snake_case(camel_case_string)
-print(snake_case_string)
+print(x)

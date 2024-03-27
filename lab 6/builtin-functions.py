@@ -34,6 +34,6 @@ delayed_square_root(milliseconds)
 def alltrue(tuple):
     return all(tuple)
 
-tuple1 = (3==3, True, True, 4 > 3)
+tuple1 = ( True, True, 4 > 3)
 
 print(alltrue(tuple1))
